@@ -41,6 +41,8 @@ herdr plugin list
 
   If `--from-herdr-event` is not listed, the hook exits 1 and the notification is lost, but the worktree operation itself still completes. Upgrade with `npm install -g @agentteams/cli@latest` and check again.
 
+- **The repository needs a readable `origin` remote.** The CLI identifies the AgentTeams repository from it. Without one the hook still fires but exits 1 with `Could not identify the repository from the herdr event...`. The herdr workspace root itself does not have to be a git repository — a non-git parent directory holding several repositories works, because the check applies to the target repository.
+
 - **A daemon token must be configured on the same host.** Run this once before using the plugin:
 
   ```bash
