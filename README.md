@@ -33,15 +33,13 @@ herdr plugin list
   npm install -g @agentteams/cli
   ```
 
-- **The CLI must support `agentteams worktree notify-created --from-herdr-event`.** Older releases accept the `notify-created` / `notify-deleted` commands but not this flag, and the hook then exits with an unknown-option error. Confirm with:
+- **`@agentteams/cli` 0.1.105 or newer** — the release that added `--from-herdr-event`. Older releases accept the `notify-created` / `notify-deleted` commands but not this flag, and the hook then exits with an unknown-option error. Confirm with:
 
   ```bash
   agentteams worktree notify-created --help
   ```
 
-  If `--from-herdr-event` is not listed, the hook exits 1 and the notification is lost, but the worktree operation itself still completes.
-
-  > **This flag is not published to npm yet.** The latest published `@agentteams/cli` at the time of writing is 0.1.104, which does not have it, so upgrading today will not make it appear in `--help`. Once a release including the flag is out, run `npm install -g @agentteams/cli@latest` and check again.
+  If `--from-herdr-event` is not listed, the hook exits 1 and the notification is lost, but the worktree operation itself still completes. Upgrade with `npm install -g @agentteams/cli@latest` and check again.
 
 - **A daemon token must be configured on the same host.** Run this once before using the plugin:
 
