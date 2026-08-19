@@ -1,0 +1,14 @@
+# AgentTeams worktree notifier — herdr plugin manifest.
+# Install with: herdr plugin install AgentTeamsRun/herdr
+id = "agentteams"
+name = "AgentTeams worktree notifier"
+version = "0.1.0"
+min_herdr_version = "0.8.0"
+
+[[events]]
+on = "worktree.created"
+command = ["agentteams", "worktree", "notify-created", "--from-herdr-event", "--quiet"]
+
+[[events]]
+on = "worktree.removed"
+command = ["agentteams", "worktree", "notify-deleted", "--from-herdr-event", "--quiet"]
